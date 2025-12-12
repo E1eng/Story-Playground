@@ -1,4 +1,4 @@
-import { createPublicClient, http } from "viem";
+import { createPublicClient, http, formatEther } from "viem";
 import { aeneid } from "@story-protocol/core-sdk";
 
 const publicClient = createPublicClient({
@@ -87,7 +87,7 @@ async function getAllLicenses(ipId: string) {
     console.log(`License Terms ID: ${licenseTermsId}`);
     console.log(`Commercial Use: ${detail.commercialUse}`);
     console.log(`Derivatives Allowed: ${detail.derivativesAllowed}`);
-    console.log(`Minting Fee: ${detail.defaultMintingFee}`);
+    console.log(`Minting Fee: ${formatEther(detail.defaultMintingFee)} IP`}`);
     console.log(`Rev Share: ${detail.commercialRevShare / 1_000_000}%`);
   }
 }
@@ -95,9 +95,10 @@ async function getAllLicenses(ipId: string) {
 // Panggil fungsi
 getAllLicenses("0x..."); // masukkan IP Address
 
-// Output
+/*
+Output
 
-```Total licenses: 2
+Total licenses: 2
 
 --- License #1 ---
 License Terms ID: 1
@@ -112,3 +113,4 @@ Commercial Use: true
 Derivatives Allowed: true
 Minting Fee: 1000000000000000000
 Rev Share: 10%```
+*/
