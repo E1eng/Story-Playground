@@ -1,5 +1,5 @@
 import { createPublicClient, http, formatEther } from "viem";
-import { aeneid } from "@story-protocol/core-sdk";
+import { mainnet } from "@story-protocol/core-sdk";
 
 const publicClient = createPublicClient({
   chain: mainnet,
