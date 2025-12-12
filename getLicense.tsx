@@ -2,8 +2,8 @@ import { createPublicClient, http, formatEther } from "viem";
 import { aeneid } from "@story-protocol/core-sdk";
 
 const publicClient = createPublicClient({
-  chain: aeneid,
-  transport: http("https://aeneid.storyrpc.io"),
+  chain: mainnet,
+  transport: http("https://mainnet.storyrpc.io"),
 });
 
 const LICENSE_REGISTRY = "0x529a750E02d8E2f15649c13D69a465286a780e24";
